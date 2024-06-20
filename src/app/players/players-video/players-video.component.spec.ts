@@ -8,10 +8,9 @@ describe('PlayersVideoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [PlayersVideoComponent]
-    })
-    .compileComponents();
-    
+      declarations: [PlayersVideoComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(PlayersVideoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
