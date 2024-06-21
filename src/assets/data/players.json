@@ -1,6 +1,7 @@
 {
     "players": [
       {
+        "id": 1,
         "name": "Fridolina",
         "lastname": "Rolfo",
         "team": "FC Barcelona",
@@ -24,6 +25,7 @@
         ]
       },
       {
+        "id": 2,
         "name": "Aitana",
         "lastname": "Bonmatí",
         "team": "FC Barcelona",
@@ -47,6 +49,7 @@
         ]
       },
       {
+        "id": 3,
         "name": "Caroline",
         "lastname": "Graham Hansen",
         "team": "FC Barcelona",
@@ -70,11 +73,14 @@
         ]
       },
       {
+        "id": 4,
         "name": "Salma Celeste",
         "lastname": "Paralluelo",
         "team": "FC Barcelona",
         "nationality": "Spain",
         "league": "Liga F",
+        "photo": "https://erafutbolfemenino.com/wp-content/uploads/2023/11/F-L5c_mXoAEZh7P.jpg",
+        "photo_card":"https://pbs.twimg.com/media/FhT2wbaXEAAJ7Cz?format=jpg&name=medium",
         "stats": {
           "pace": 94,
           "shooting": 83,

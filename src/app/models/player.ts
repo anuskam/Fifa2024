@@ -2,6 +2,7 @@ import { IPlayer } from '../interfaces/IPlayer.interface';
 import { IStat } from '../interfaces/IStat.interface';
 
 export class Player implements IPlayer {
+  id: number; 
   name: string;
   lastname: string;
   team: string;
@@ -12,6 +13,7 @@ export class Player implements IPlayer {
   stats: IStat;
 
   constructor(player: IPlayer, stats: IStat) {
+    this.id = player.id;
     this.name = player.name;
     this.lastname = player.lastname;
     this.team = player.team;
