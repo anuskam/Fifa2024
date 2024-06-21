@@ -1,0 +1,19 @@
+.multilanguage {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20px;
+  
+  &__button {
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    &:focus {
+      border-bottom: 2px solid black;
+    }
+  }
+
+  &__image {
+    width: 35px;
+  }
+}
