@@ -1,1 +1,15 @@
 <p>header works!</p>
+<section>
+  <div class="multilanguage">
+    <div class="multilanguage__flag" *ngFor="let language of languages">
+      <button
+        class="multilanguage__button"
+        (click)="getLanguage(language.value)">
+        <img
+          class="multilanguage__image"
+          alt="{{ language.label }}"
+          src="{{ language.icon }}" />
+      </button>
+    </div>
+  </div>
+</section>
