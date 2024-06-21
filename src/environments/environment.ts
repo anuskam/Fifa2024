@@ -1,5 +1,4 @@
 // src/environments/environment.ts
 export const environment = {
-    apiUrl: 'assets/data/players.json'
-  };
-  
+  apiUrl: 'assets/data/players.json',
+};
