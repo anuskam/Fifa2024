@@ -1,6 +1,7 @@
 import { IStat } from './IStat.interface';
 
 export interface IPlayer {
+  id: number;
   name: string;
   lastname: string;
   team: string;
