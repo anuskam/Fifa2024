@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PlayersService } from '../../services/players.service';
 import { IPlayer } from '../../interfaces/IPlayer.interface';
@@ -12,11 +12,8 @@ export class PlayersVideoComponent implements OnInit {
   player: IPlayer | undefined;
   videos: string[] = [];
   errorMessage: string | undefined;
-
-  constructor(
-    private route: ActivatedRoute,
-    private playersService: PlayersService
-  ) {}
+  private route = inject(ActivatedRoute);
+  private playersService = inject(PlayersService);
 
   ngOnInit(): void {
     this.loadPlayerVideos();

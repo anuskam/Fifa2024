@@ -4,9 +4,10 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { IPlayer } from '../interfaces/IPlayer.interface';
+import { PlayersModule } from '../players/players.module';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: PlayersModule
 })
 export class PlayersService {
   private playersUrl = environment.apiUrl;

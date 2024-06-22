@@ -9,7 +9,6 @@ import { IPlayer } from '../../interfaces/IPlayer.interface';
 })
 export class PlayersListComponent implements OnInit {
   players: IPlayer[] = [];
-
   private playersService = inject(PlayersService);
 
   ngOnInit(): void {
