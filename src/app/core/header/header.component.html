@@ -1,15 +1,23 @@
-<p>header works!</p>
 <section>
-  <div class="multilanguage">
-    <div class="multilanguage__flag" *ngFor="let language of languages">
-      <button
-        class="multilanguage__button"
-        (click)="getLanguage(language.value)">
-        <img
-          class="multilanguage__image"
-          alt="{{ language.label }}"
-          src="{{ language.icon }}" />
-      </button>
+  <div class="header">
+    <div class="header__logo">
+      <img
+        src="../../../assets/images/fifa-logo.png"
+        alt="{{ 'header.logo' | translate }}" />
+    </div>
+    <div class="header__multilanguage">
+      <div
+        class="header__multilanguage-flag"
+        *ngFor="let language of languages">
+        <button
+          class="header__multilanguage-button"
+          (click)="getLanguage(language.value)">
+          <img
+            class="header__multilanguage-image"
+            alt="{{ language.label }}"
+            src="{{ language.icon }}" />
+        </button>
+      </div>
     </div>
   </div>
 </section>
