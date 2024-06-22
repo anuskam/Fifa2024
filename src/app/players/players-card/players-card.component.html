@@ -1,1 +1,25 @@
-<p>players-card works!</p>
+<ng-container *ngIf="errorMessage; else playerDetails">
+  <div>{{ errorMessage }}</div>
+</ng-container>
+
+<ng-template #playerDetails>
+  <div *ngIf="player">
+    <h1>{{ player.name }} {{ player.lastname }}</h1>
+    <img
+      [src]="player.photo_card"
+      alt="{{ player.name }} {{ player.lastname }} {{
+        'card_image' | translate
+      }}" />
+    <p>Team: {{ player.team }}</p>
+    <p>Nationality: {{ player.nationality }}</p>
+    <p>League: {{ player.league }}</p>
+    <p>Pace: {{ player.stats.pace }}</p>
+    <p>Shooting: {{ player.stats.shooting }}</p>
+    <p>Passing: {{ player.stats.passing }}</p>
+    <p>Dribbling: {{ player.stats.dribbling }}</p>
+    <p>Defending: {{ player.stats.defending }}</p>
+    <p>Physical: {{ player.stats.physical }}</p>
+    <button [routerLink]="['videos']">Videos</button>
+  </div>
+</ng-template>
+<button [routerLink]="['/players']">Volver</button>

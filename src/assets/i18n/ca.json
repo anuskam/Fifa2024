@@ -2,5 +2,8 @@
   "title": "Titol",
   "header": {
     "logo": "Logo Fifa 2024"
+  },
+  "player": {
+    "card_image": "fitxa tècnica"
   }
 }

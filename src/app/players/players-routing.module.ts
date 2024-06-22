@@ -14,7 +14,7 @@ const routes: Routes = [
     component: PlayersCardComponent,
   },
   {
-    path: ':id/video',
+    path: ':id/videos',
     component: PlayersVideoComponent,
   },
 ];

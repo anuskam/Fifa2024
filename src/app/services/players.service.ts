@@ -1,21 +1,12 @@
 import { Injectable } from '@angular/core';
-import { environment } from '../../environments/environment';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { IPlayer } from '../interfaces/IPlayer.interface';
+import { HttpErrorResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class PlayersService {
-  private playersUrl = environment.apiUrl;
-
-  constructor(private http: HttpClient) {}
-
-  getPlayers(): Observable<IPlayer[]> {
-    return this.http.get<{ players: IPlayer[] }>(this.playersUrl).pipe(
-      map(response => response.players)
-    );
-  }
+@Injectable()
+export abstract class PlayersService {
+  abstract getPlayers(): Observable<IPlayer[]>;
+  abstract getPlayerById(id: number): Observable<IPlayer | undefined>;
+  abstract getPlayerVideos(id: number): Observable<string[]>;
+  abstract handleError(error: HttpErrorResponse): Observable<never>;
 }
