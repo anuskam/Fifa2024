@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Observable, of, throwError } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { IPlayer } from '../interfaces/IPlayer.interface';
-import { PlayersModule } from '../players/players.module';
+import { IPlayersService } from '../interfaces/players-service.interface';
 
 @Injectable({
-  providedIn: PlayersModule
+  providedIn: 'root'
 })
-export class PlayersService {
+export class PlayersService implements IPlayersService {
   private playersUrl = environment.apiUrl;
 
   constructor(private http: HttpClient) {}
@@ -36,9 +36,7 @@ export class PlayersService {
   }
 
   private handleError(error: HttpErrorResponse): Observable<never> {
-    // Log the error to the console or send it to a logging infrastructure
     console.error('An error occurred:', error.message);
-    // Return a user-facing error message
     return throwError(() => new Error('Something bad happened; please try again later.'));
   }
 }
