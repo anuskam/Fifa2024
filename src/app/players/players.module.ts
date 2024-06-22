@@ -5,7 +5,7 @@ import { PlayersRoutingModule } from './players-routing.module';
 import { PlayersListComponent } from './players-list/players-list.component';
 import { PlayersCardComponent } from './players-card/players-card.component';
 import { PlayersVideoComponent } from './players-video/players-video.component';
-import { SafeUrlPipe } from '../utils/pipes/safe-url.pipe';  
+import { SafeUrlPipe } from '../utils/pipes/safe-url.pipe';
 import { PlayersService } from '../services/players.service';
 
 @NgModule({
@@ -13,11 +13,9 @@ import { PlayersService } from '../services/players.service';
     PlayersListComponent,
     PlayersCardComponent,
     PlayersVideoComponent,
-    SafeUrlPipe
+    SafeUrlPipe,
   ],
   imports: [CommonModule, PlayersRoutingModule],
-  providers: [
-    PlayersService
-  ]
+  providers: [PlayersService],
 })
 export class PlayersModule {}

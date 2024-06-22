@@ -6,7 +6,7 @@ import { IPlayer } from '../../interfaces/IPlayer.interface';
 @Component({
   selector: 'app-players-video',
   templateUrl: './players-video.component.html',
-  styleUrls: ['./players-video.component.scss']
+  styleUrl: './players-video.component.scss',
 })
 export class PlayersVideoComponent implements OnInit {
   player: IPlayer | undefined;
@@ -27,14 +27,14 @@ export class PlayersVideoComponent implements OnInit {
           this.player = player;
           this.videos = player ? player.videos : [];
         },
-        error: (error: any) => this.handleError(error)
+        error: (error: unknown) => this.handleError(error),
       });
     } else {
       this.handleError(new Error('Invalid player ID'));
     }
   }
 
-  private handleError(error: any): void {
+  private handleError(error: unknown): void {
     console.error('An error occurred:', error);
     this.errorMessage = 'Failed to load player videos. Please try again later.';
   }

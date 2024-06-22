@@ -2,7 +2,7 @@ import { IPlayer } from '../interfaces/IPlayer.interface';
 import { IStat } from '../interfaces/IStat.interface';
 
 export class Player implements IPlayer {
-  id: number; 
+  id: number;
   name: string;
   lastname: string;
   team: string;
