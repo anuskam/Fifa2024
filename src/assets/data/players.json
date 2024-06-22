@@ -8,14 +8,14 @@
         "nationality": "Sweden",
         "league": "Liga F",
         "photo": "https://img.asmedia.epimg.net/resizer/v2/GTZKGT7ZLGRLJMTU4ZB3YDTIJA.JPG?auth=23100a7afa0390f3e19d854e41c561beb2b2815cf97a089c00d6bf3fc387dfdd&width=1200&height=1200&smart=true",
-        "photo_card":"https://img.europapress.es/fotoweb/fotonoticia_20210707141632_1200.jpg",
+        "photo_card":"assets/images/fridolina_rolfo.png",
         "stats": {
-          "pace": 91,
-          "shooting": 90,
-          "passing": 93,
-          "dribbling": 95,
-          "defending": 92,
-          "physical": 89
+          "pace": 82,
+          "shooting": 82,
+          "passing": 82,
+          "dribbling": 87,
+          "defending": 83,
+          "physical": 80
         },
         "videos": [
           "https://www.youtube.com/watch?v=YQ5yN30DZ8I",
@@ -32,14 +32,14 @@
         "nationality": "Spain",
         "league": "Liga F",
         "photo": "https://thesun.my/binrepository/aitana-5_3951317_20240312182827.jpg",
-        "photo_card":"https://hips.hearstapps.com/hmg-prod/images/aitana-bonmati-of-fc-barcelona-looks-on-during-the-news-photo-1684304412.jpg?crop=1.00xw:0.846xh;0,0&resize=2048:*",
+        "photo_card":"assets/images/aitana_bonmati",
         "stats": {
-          "pace": 84,
-          "shooting": 79,
-          "passing": 86,
-          "dribbling": 88,
-          "defending": 73,
-          "physical": 75
+          "pace": 81,
+          "shooting": 84,
+          "passing": 83,
+          "dribbling": 91,
+          "defending": 75,
+          "physical": 73
         },
         "videos": [
           "https://www.youtube.com/watch?v=pzSKKqeDOm4",
@@ -56,14 +56,14 @@
         "nationality": "Norway",
         "league": "Liga F",
         "photo": "https://cdn.vox-cdn.com/thumbor/bktfxagXuE8F_z7NUBP9WzSm2Js=/0x0:3000x4000/1200x800/filters:focal(966x360:1446x840)/cdn.vox-cdn.com/uploads/chorus_image/image/69972970/1345106031.0.jpg",
-        "photo_card":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcvANQ9QaW54neQgEUkra6drDBuI_QOt2RLw&s",
+        "photo_card":"assets/images/caroline_graham.png",
         "stats": {
           "pace": 89,
-          "shooting": 83,
-          "passing": 85,
+          "shooting": 86,
+          "passing": 88,
           "dribbling": 90,
-          "defending": 56,
-          "physical": 65
+          "defending": 47,
+          "physical": 75
         },
         "videos": [
           "https://www.youtube.com/watch?v=gbQlwEYr8KM",
@@ -80,14 +80,14 @@
         "nationality": "Spain",
         "league": "Liga F",
         "photo": "https://erafutbolfemenino.com/wp-content/uploads/2023/11/F-L5c_mXoAEZh7P.jpg",
-        "photo_card":"https://pbs.twimg.com/media/FhT2wbaXEAAJ7Cz?format=jpg&name=medium",
+        "photo_card":"assets/images/salma_paralluelo.png",
         "stats": {
-          "pace": 94,
-          "shooting": 83,
-          "passing": 78,
-          "dribbling": 87,
-          "defending": 50,
-          "physical": 75
+          "pace": 93,
+          "shooting": 77,
+          "passing": 71,
+          "dribbling": 79,
+          "defending": 43,
+          "physical": 70
         },
         "videos": [
           "https://www.youtube.com/watch?v=bkF_eP1rics",
