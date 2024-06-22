@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
@@ -11,8 +11,7 @@ import { IPlayersService } from '../interfaces/players-service.interface';
 })
 export class PlayersService implements IPlayersService {
   private playersUrl = environment.apiUrl;
-
-  constructor(private http: HttpClient) {}
+  private http = inject(HttpClient);
 
   getPlayers(): Observable<IPlayer[]> {
     return this.http.get<{ players: IPlayer[] }>(this.playersUrl).pipe(
