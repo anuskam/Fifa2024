@@ -10,16 +10,10 @@ import { HttpClientModule } from '@angular/common/http';
 // Components
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { Error404Component } from './error404/error404.component';
 
 @NgModule({
-  declarations: [
-    HeaderComponent,
-    FooterComponent,
-    BreadcrumbComponent,
-    Error404Component,
-  ],
+  declarations: [HeaderComponent, FooterComponent, Error404Component],
   imports: [CommonModule, TranslateModule, HttpClientModule],
   exports: [HeaderComponent, FooterComponent],
 })

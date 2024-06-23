@@ -14,6 +14,7 @@ import { PlayersVideoComponent } from './players-video/players-video.component';
 import { SafeUrlPipe } from '../utils/pipes/safe-url.pipe';
 import { PlayersService } from '../services/players.service';
 import { PlayersPublicService } from '../services/players-public.service';
+import { BreadcrumbModule } from 'primeng/breadcrumb';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { PlayersPublicService } from '../services/players-public.service';
     PlayersRoutingModule,
     TranslateModule,
     HttpClientModule,
+    BreadcrumbModule,
   ],
   providers: [
     { provide: PlayersService, useClass: PlayersPublicService },

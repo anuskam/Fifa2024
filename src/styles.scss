@@ -1,13 +1,27 @@
 @import './styles/_reset';
 @import './styles/_variables';
 @import './styles/_mixins';
+
 html, body {
   height: 100%;
 }
 
 body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: $font-family;
 }
 
+// Styles for breadcrumb
+.p-menuitem-link {
+  padding: 10px;
+  font-family: $font-family;
+  text-decoration: none;
+  color: #495057;
+}
 
+.p-menuitem-text {
+  font-size: 14px;
+}
+
+.p-menuitem-icon {
+  font-size: 16px;
+}
