@@ -8,82 +8,97 @@
     <div class="card">
       <img
         [src]="player.photo_card"
-        alt="{{ player.name }} {{ player.lastname }} {{ 'card_image' | translate }}"
-        class="card-image"
-      />
+        alt="{{ player.name }} {{ player.lastname }} {{
+          'player.card_image' | translate
+        }}"
+        class="card-image" />
     </div>
     <div class="info">
-      <p>{{ 'pace' | translate | titlecase}}: {{ player.stats.pace }}</p>
+      <p>
+        {{ 'player.pace' | translate | titlecase }}: {{ player.stats.pace }}
+      </p>
       <div class="progress">
-        <div 
-          class="progress-bar" 
-          role="progressbar" 
-          [style.width.%]="player.stats.pace" 
-          [attr.aria-valuenow]="player.stats.pace" 
-          aria-valuemin="0" 
-          aria-valuemax="100">
-        </div>
+        <div
+          class="progress-bar"
+          role="progressbar"
+          [style.width.%]="player.stats.pace"
+          [attr.aria-valuenow]="player.stats.pace"
+          aria-valuemin="0"
+          aria-valuemax="100"></div>
       </div>
-      <p>{{ 'shooting' | translate | titlecase}}: {{ player.stats.shooting }}</p>
+      <p>
+        {{ 'player.shooting' | translate | titlecase }}:
+        {{ player.stats.shooting }}
+      </p>
       <div class="progress">
-        <div 
-          class="progress-bar" 
-          role="progressbar" 
-          [style.width.%]="player.stats.shooting" 
-          [attr.aria-valuenow]="player.stats.shooting" 
-          aria-valuemin="0" 
-          aria-valuemax="100">
-        </div>
+        <div
+          class="progress-bar"
+          role="progressbar"
+          [style.width.%]="player.stats.shooting"
+          [attr.aria-valuenow]="player.stats.shooting"
+          aria-valuemin="0"
+          aria-valuemax="100"></div>
       </div>
-      <p>{{ 'passing' | translate | titlecase}}: {{ player.stats.passing }}</p>
+      <p>
+        {{ 'player.passing' | translate | titlecase }}:
+        {{ player.stats.passing }}
+      </p>
       <div class="progress">
-        <div 
-          class="progress-bar" 
-          role="progressbar" 
-          [style.width.%]="player.stats.passing" 
-          [attr.aria-valuenow]="player.stats.passing" 
-          aria-valuemin="0" 
-          aria-valuemax="100">
-        </div>
+        <div
+          class="progress-bar"
+          role="progressbar"
+          [style.width.%]="player.stats.passing"
+          [attr.aria-valuenow]="player.stats.passing"
+          aria-valuemin="0"
+          aria-valuemax="100"></div>
       </div>
-      <p>{{ 'dribbling' | translate | titlecase}}: {{ player.stats.dribbling }}</p>
+      <p>
+        {{ 'player.dribbling' | translate | titlecase }}:
+        {{ player.stats.dribbling }}
+      </p>
       <div class="progress">
-        <div 
-          class="progress-bar" 
-          role="progressbar" 
-          [style.width.%]="player.stats.dribbling" 
-          [attr.aria-valuenow]="player.stats.dribbling" 
-          aria-valuemin="0" 
-          aria-valuemax="100">
-        </div>
+        <div
+          class="progress-bar"
+          role="progressbar"
+          [style.width.%]="player.stats.dribbling"
+          [attr.aria-valuenow]="player.stats.dribbling"
+          aria-valuemin="0"
+          aria-valuemax="100"></div>
       </div>
-      <p>{{ 'defending' | translate | titlecase}}: {{ player.stats.defending }}</p>
+      <p>
+        {{ 'player.defending' | translate | titlecase }}:
+        {{ player.stats.defending }}
+      </p>
       <div class="progress">
-        <div 
-          class="progress-bar" 
-          role="progressbar" 
-          [style.width.%]="player.stats.defending" 
-          [attr.aria-valuenow]="player.stats.defending" 
-          aria-valuemin="0" 
-          aria-valuemax="100">
-        </div>
+        <div
+          class="progress-bar"
+          role="progressbar"
+          [style.width.%]="player.stats.defending"
+          [attr.aria-valuenow]="player.stats.defending"
+          aria-valuemin="0"
+          aria-valuemax="100"></div>
       </div>
-      <p>{{ 'physical' | translate | titlecase}}: {{ player.stats.physical }}</p>
+      <p>
+        {{ 'player.physical' | translate | titlecase }}:
+        {{ player.stats.physical }}
+      </p>
       <div class="progress">
-        <div 
-          class="progress-bar" 
-          role="progressbar" 
-          [style.width.%]="player.stats.physical" 
-          [attr.aria-valuenow]="player.stats.physical" 
-          aria-valuemin="0" 
-          aria-valuemax="100">
-        </div>
+        <div
+          class="progress-bar"
+          role="progressbar"
+          [style.width.%]="player.stats.physical"
+          [attr.aria-valuenow]="player.stats.physical"
+          aria-valuemin="0"
+          aria-valuemax="100"></div>
       </div>
     </div>
   </div>
   <div class="button-container">
-    <button [routerLink]="['/players']">{{ 'return' | translate | titlecase}}</button>
-    <button [routerLink]="['videos']">{{ 'videos' | translate | titlecase}}</button>
+    <button [routerLink]="['/players']">
+      {{ 'button.return' | translate | titlecase }}
+    </button>
+    <button [routerLink]="['videos']">
+      {{ 'button.videos' | translate | titlecase }}
+    </button>
   </div>
-</ng-template>  
-
+</ng-template>

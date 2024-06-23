@@ -6,7 +6,6 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { HttpClientModule } from '@angular/common/http';
 
-
 // Components
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';

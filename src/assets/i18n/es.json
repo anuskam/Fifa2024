@@ -1,10 +1,18 @@
 {
-  "pace": "ritmo",
-  "shooting": "tiro",
-  "passing": "pase",
-  "dribbling": "regate",
-  "defending": "defensa",
-  "physical": "físico",
-  "return": "volver",
-  "videos": "videos"
+  "header": {
+    "logo": "Logo Fifa 2024"
+  },
+  "player": {
+    "card_image": "ficha técnica",
+    "pace": "ritmo",
+    "shooting": "tiro",
+    "passing": "pase",
+    "dribbling": "regate",
+    "defending": "defensa",
+    "physical": "físico"
+  },
+  "button": {
+    "return": "volver",
+    "videos": "videos"
+  }
 }
