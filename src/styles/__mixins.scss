@@ -1,0 +1,30 @@
+@mixin flex-center($direction: column, $justify: center, $align: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+  }
+  
+  @mixin button-style($padding: 10px 20px, $font-size: 16px, $color: #ffffff, $background-color: #8d70aa, $border-radius: 5px) {
+    padding: $padding;
+    font-size: $font-size;
+    color: $color;
+    background-color: $background-color;
+    border: none;
+    border-radius: $border-radius;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: darken($background-color, 10%);
+    }
+  }
+  
+  
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == medium {
+      @media (min-width: $breakpoint-medium) { @content; }
+    } @else if $breakpoint == large {
+      @media (min-width: $breakpoint-large) { @content; }
+    }
+  }
+  

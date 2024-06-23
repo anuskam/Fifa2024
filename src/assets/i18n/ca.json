@@ -1,9 +1,8 @@
 {
-  "title": "Titol",
-  "header": {
-    "logo": "Logo Fifa 2024"
-  },
-  "player": {
-    "card_image": "fitxa tècnica"
-  }
+  "pace": "ritme",
+  "shooting": "xut",
+  "passing": "passada",
+  "dribbling": "driblatge",
+  "defending": "defensa",
+  "physical": "físic"
 }
