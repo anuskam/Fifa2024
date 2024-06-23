@@ -30,7 +30,6 @@ import { PlayersPublicService } from '../services/players-public.service';
   ],
   providers: [
     { provide: PlayersService, useClass: PlayersPublicService },
-    importProvidersFrom(TranslateModule.forRoot(provideTranslation())),
   ],
 })
 export class PlayersModule {}

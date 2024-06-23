@@ -12,7 +12,7 @@
       />
     </div>
     <div class="info">
-      <p>{{ 'pace' | translate }}: {{ player.stats.pace }}</p>
+      <p>{{ 'pace' | translate | titlecase}}: {{ player.stats.pace }}</p>
       <div class="progress">
         <div 
           class="progress-bar" 
@@ -23,7 +23,7 @@
           aria-valuemax="100">
         </div>
       </div>
-      <p>Shooting: {{ player.stats.shooting }}</p>
+      <p>{{ 'shooting' | translate | titlecase}}: {{ player.stats.shooting }}</p>
       <div class="progress">
         <div 
           class="progress-bar" 
@@ -34,7 +34,7 @@
           aria-valuemax="100">
         </div>
       </div>
-      <p>Passing: {{ player.stats.passing }}</p>
+      <p>{{ 'passing' | translate | titlecase}}: {{ player.stats.passing }}</p>
       <div class="progress">
         <div 
           class="progress-bar" 
@@ -45,7 +45,7 @@
           aria-valuemax="100">
         </div>
       </div>
-      <p>Dribbling: {{ player.stats.dribbling }}</p>
+      <p>{{ 'dribbling' | translate | titlecase}}: {{ player.stats.dribbling }}</p>
       <div class="progress">
         <div 
           class="progress-bar" 
@@ -56,7 +56,7 @@
           aria-valuemax="100">
         </div>
       </div>
-      <p>Defending: {{ player.stats.defending }}</p>
+      <p>{{ 'defending' | translate | titlecase}}: {{ player.stats.defending }}</p>
       <div class="progress">
         <div 
           class="progress-bar" 
@@ -67,7 +67,7 @@
           aria-valuemax="100">
         </div>
       </div>
-      <p>Physical: {{ player.stats.physical }}</p>
+      <p>{{ 'physical' | translate | titlecase}}: {{ player.stats.physical }}</p>
       <div class="progress">
         <div 
           class="progress-bar" 
@@ -81,8 +81,8 @@
     </div>
   </div>
   <div class="button-container">
-    <button [routerLink]="['/players']">Volver</button>
-    <button [routerLink]="['videos']">Videos</button>
+    <button [routerLink]="['/players']">{{ 'return' | translate | titlecase}}</button>
+    <button [routerLink]="['videos']">{{ 'videos' | translate | titlecase}}</button>
   </div>
 </ng-template>  
 

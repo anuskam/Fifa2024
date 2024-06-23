@@ -13,6 +13,6 @@
   </div>  
 </ng-template>
 <div class="button-container">
-  <button *ngIf="player" [routerLink]="['/players', player.id]">Volver</button>
+  <button *ngIf="player" [routerLink]="['/players', player.id]">{{ 'videos' | translate | titlecase}}</button>
 </div>
 

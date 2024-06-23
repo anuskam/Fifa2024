@@ -4,5 +4,7 @@
   "passing": "passing",
   "dribbling": "dribbling",
   "defending": "defending",
-  "physical": "physical"
+  "physical": "physical",
+  "return": "return",
+  "videos": "videos"
 }
