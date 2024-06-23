@@ -13,6 +13,7 @@ import { HeaderComponent } from './core/header/header.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { BreadcrumbComponent } from './core/breadcrumb/breadcrumb.component';
 import { Error404Component } from './core/error404/error404.component';
+
 /* import { MultiLanguageComponent } from './components/multi-language/multi-language.component'; */
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { Error404Component } from './core/error404/error404.component';
     HeaderComponent,
     FooterComponent,
     BreadcrumbComponent,
-    Error404Component,
+    Error404Component
   ],
   imports: [BrowserModule, AppRoutingModule, TranslateModule, HttpClientModule],
   providers: [
