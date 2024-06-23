@@ -9,5 +9,6 @@ export interface IPlayer {
   league: string;
   photo: string;
   photo_card: string;
+  videos: string[];
   stats: IStat;
 }

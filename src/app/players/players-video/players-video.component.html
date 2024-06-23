@@ -1,1 +1,17 @@
-<p>players-video works!</p>
+<ng-container *ngIf="errorMessage; else videoList">
+  <div class="error-message">{{ errorMessage }}</div>
+</ng-container>
+
+<ng-template #videoList>
+  <div *ngIf="videos.length">
+    <div *ngFor="let video of videos">
+      <iframe
+        [src]="video | safeUrl"
+        width="560"
+        height="315"
+        frameborder="0"
+        allowfullscreen></iframe>
+    </div>
+  </div>
+  <button *ngIf="player" [routerLink]="['/players', player.id]">Volver</button>
+</ng-template>

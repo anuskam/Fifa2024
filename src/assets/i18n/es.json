@@ -1,3 +1,9 @@
 {
-    "title": "Titulito"
+  "title": "Titulito",
+  "header": {
+    "logo": "Logo Fifa 2024"
+  },
+  "player": {
+    "card_image": "ficha técnica"
+  }
 }
