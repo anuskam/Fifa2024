@@ -3,9 +3,7 @@ import { CommonModule } from '@angular/common';
 
 // i18n
 import { HttpClientModule } from '@angular/common/http';
-import { importProvidersFrom } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
-import { provideTranslation } from '../core/config/i18n/translate-loader.config';
 
 import { PlayersRoutingModule } from './players-routing.module';
 import { PlayersListComponent } from './players-list/players-list.component';
@@ -30,8 +28,6 @@ import { BreadcrumbModule } from 'primeng/breadcrumb';
     HttpClientModule,
     BreadcrumbModule,
   ],
-  providers: [
-    { provide: PlayersService, useClass: PlayersPublicService },
-  ],
+  providers: [{ provide: PlayersService, useClass: PlayersPublicService }],
 })
 export class PlayersModule {}
