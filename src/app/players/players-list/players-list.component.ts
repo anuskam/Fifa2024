@@ -1,6 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { PlayersService } from '../../services/players.service';
 import { IPlayer } from '../../interfaces/IPlayer.interface';
+import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-players-list',
@@ -9,10 +10,12 @@ import { IPlayer } from '../../interfaces/IPlayer.interface';
 })
 export class PlayersListComponent implements OnInit {
   players: IPlayer[] = [];
+  items: MenuItem[] = [];
   private playersService = inject(PlayersService);
 
   ngOnInit(): void {
     this.loadPlayers();
+    this.items = [{ label: '', icon: 'pi pi-home', routerLink: ['/players'] }];
   }
 
   private loadPlayers(): void {
