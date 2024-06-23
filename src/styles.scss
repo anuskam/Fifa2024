@@ -1,5 +1,10 @@
 @import './styles/_reset';
 @import './styles/_variables';
+@import './styles/_mixins';
+
+html, body {
+  height: 100%;
+}
 
 body {
   font-family: $font-family;

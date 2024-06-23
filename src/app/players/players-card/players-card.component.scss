@@ -1,0 +1,82 @@
+@import '../../../styles/_variables';
+@import '../../../styles/_mixins';
+
+.container {
+  @include flex-center(column, center, center);
+  width: 100%;
+  margin-top: 60px;
+
+  .card,
+  .info {
+    width: 100%;
+  }
+  
+  .card {
+    margin-bottom: 1rem;
+    border: none;
+
+    .card-image {
+      width: 100%;
+      max-width: 300px !important;
+      height: auto;
+      margin: auto;
+    }
+  }
+
+  .info {
+    text-align: center;
+
+    p {
+      margin: 0.5rem 0;
+    }
+
+    .progress {
+      width: 100%;
+      margin: 0.5rem auto;
+    }
+
+    .progress-bar {
+      background-color: $primary-color;
+    }
+  }
+
+  @include respond-to(medium) {
+    flex-direction: row;
+    justify-content: space-around;
+
+    .card,
+    .info {
+      width: 50%;
+    }
+
+    .card .card-image {
+      margin-left: 1rem;
+    }
+
+    .info {
+      text-align: left;
+      margin-left: 1rem;
+    }
+  }
+
+  @include respond-to(large) {
+    .card .card-image {
+      margin-left: 1rem;
+    }
+
+    .info {
+      margin-left: 2rem;
+    }
+  }
+}
+
+.button-container {
+  @include flex-center(row, center, center);
+  gap: 5px;
+  width: 100%;
+  margin-top: 80px;
+
+  button {
+    @include button-style();
+  }
+}

@@ -32,7 +32,7 @@
         "nationality": "Spain",
         "league": "Liga F",
         "photo": "https://thesun.my/binrepository/aitana-5_3951317_20240312182827.jpg",
-        "photo_card":"assets/images/aitana_bonmati",
+        "photo_card":"assets/images/aitana_bonmati.png",
         "stats": {
           "pace": 81,
           "shooting": 84,
@@ -42,7 +42,7 @@
           "physical": 73
         },
         "videos": [
-          "https://www.youtube.com/watch?v=pzSKKqeDOm4",
+          "https://www.youtube.com/watch?v=5l0_KCfQ6xs",
           "https://www.youtube.com/watch?v=1sJRWXg35MY",
           "https://www.youtube.com/watch?v=_pgIzmGtEHA",
           "https://www.youtube.com/watch?v=AcBgvjnq338"
@@ -93,7 +93,7 @@
           "https://www.youtube.com/watch?v=bkF_eP1rics",
           "https://www.youtube.com/watch?v=Dry5wyUW6Lo",
           "https://www.youtube.com/watch?v=xTN3HEYQkSc",
-          "https://www.youtube.com/shorts/RP0_Z2b4y10"
+          "https://www.youtube.com/watch?v=z2mku2Qx3JE"
         ]
       }
     ]
