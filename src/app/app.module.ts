@@ -17,10 +17,9 @@ import { provideTranslation } from './core/config/i18n/translate-loader.config';
     TranslateModule,
     HttpClientModule,
     CoreModule,
-    TranslateModule.forRoot(provideTranslation())
+    TranslateModule.forRoot(provideTranslation()),
   ],
-  providers: [
-  ],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
