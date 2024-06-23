@@ -1,9 +1,10 @@
 {
-  "title": "Titlelito",
-  "header": {
-    "logo": "Fifa's logo 2024"
-  },
-  "player": {
-    "card_image": "technical data"
-  }
+  "pace": "pace",
+  "shooting": "shooting",
+  "passing": "passing",
+  "dribbling": "dribbling",
+  "defending": "defending",
+  "physical": "physical",
+  "return": "return",
+  "videos": "videos"
 }

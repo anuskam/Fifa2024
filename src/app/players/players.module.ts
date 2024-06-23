@@ -32,7 +32,6 @@ import { BreadcrumbModule } from 'primeng/breadcrumb';
   ],
   providers: [
     { provide: PlayersService, useClass: PlayersPublicService },
-    importProvidersFrom(TranslateModule.forRoot(provideTranslation())),
   ],
 })
 export class PlayersModule {}

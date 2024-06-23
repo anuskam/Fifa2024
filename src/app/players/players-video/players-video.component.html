@@ -4,15 +4,16 @@
 </ng-container>
 
 <ng-template #videoList>
-  <div *ngIf="videos.length">
-    <div *ngFor="let video of videos">
+  <div *ngIf="videos.length" class="video-container">
+    <div *ngFor="let video of videos" class="video-item">
       <iframe
         [src]="video | safeUrl"
-        width="560"
-        height="315"
         frameborder="0"
         allowfullscreen></iframe>
     </div>
-  </div>
-  <button *ngIf="player" [routerLink]="['/players', player.id]">Volver</button>
+  </div>  
 </ng-template>
+<div class="button-container">
+  <button *ngIf="player" [routerLink]="['/players', player.id]">{{ 'videos' | translate | titlecase}}</button>
+</div>
+
