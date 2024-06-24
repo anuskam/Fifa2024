@@ -9,7 +9,7 @@ import { EncryptionService } from '../../services/encryption.service';
 @Component({
   selector: 'app-players-card',
   templateUrl: './players-card.component.html',
-  styleUrls: ['./players-card.component.scss'],
+  styleUrl: './players-card.component.scss',
 })
 export class PlayersCardComponent implements OnInit {
   player: IPlayer | undefined;
@@ -18,13 +18,14 @@ export class PlayersCardComponent implements OnInit {
   loadingState: boolean = true;
   errorState: boolean = false;
   decryptedImgNotFound: string;
+  env = environment;
   private route = inject(ActivatedRoute);
   private playersService = inject(PlayersService);
   private encryptionService = inject(EncryptionService);
 
   constructor() {
     this.decryptedImgNotFound = this.encryptionService.decrypt(
-      environment.imgNotFound,
+      this.env.imgNotFound,
     );
   }
   ngOnInit(): void {

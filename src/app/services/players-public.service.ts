@@ -12,7 +12,7 @@ export class PlayersPublicService implements PlayersService {
   decryptedApiUrl: string;
   private http = inject(HttpClient);
   private encryptionService = inject(EncryptionService);
-  
+
   constructor() {
     this.decryptedApiUrl = this.encryptionService.decrypt(environment.apiUrl);
   }

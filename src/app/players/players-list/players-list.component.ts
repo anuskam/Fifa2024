@@ -8,7 +8,7 @@ import { EncryptionService } from '../../services/encryption.service';
 @Component({
   selector: 'app-players-list',
   templateUrl: './players-list.component.html',
-  styleUrls: ['./players-list.component.scss'],
+  styleUrl: './players-list.component.scss',
 })
 export class PlayersListComponent implements OnInit {
   players: IPlayer[] = [];

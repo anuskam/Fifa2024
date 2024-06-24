@@ -8,7 +8,7 @@
             <app-load-img></app-load-img>
           </ng-container>
           <ng-template #imageTemplate>
-            <img 
+            <img
               *ngIf="!errorStates[player.photo]; else errorTemplate"
               [src]="player.photo"
               (load)="onLoad(player.photo)"
@@ -21,7 +21,7 @@
               <div class="error-placeholder">
                 <p>{{ player.name }} {{ player.lastname }}</p>
               </div>
-              <img 
+              <img
                 [src]="decryptedImgNotFound"
                 class="players-list__image"
                 alt="Image Not Found" />
