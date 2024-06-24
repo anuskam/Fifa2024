@@ -36,7 +36,17 @@
     }
 
     .progress-bar {
-      background-color: $primary-color;
+      &__color {
+        &--low {
+          background-color: #9A0722;
+        }
+        &--medium {
+          background-color: #FFBB4D;
+        }
+        &--high {
+          background-color: #32c265;
+        }
+      }
     }
   }
 

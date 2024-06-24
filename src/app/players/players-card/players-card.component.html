@@ -24,7 +24,13 @@
           [style.width.%]="player.stats.pace"
           [attr.aria-valuenow]="player.stats.pace"
           aria-valuemin="0"
-          aria-valuemax="100"></div>
+          aria-valuemax="100"
+          [ngClass]="{
+            'progress-bar__color--low': player.stats.pace < 70,
+            'progress-bar__color--medium':
+              player.stats.pace >= 70 && player.stats.pace < 90,
+            'progress-bar__color--high': player.stats.pace >= 90,
+          }"></div>
       </div>
       <p>
         {{ 'player.shooting' | translate | titlecase }}:
@@ -37,7 +43,13 @@
           [style.width.%]="player.stats.shooting"
           [attr.aria-valuenow]="player.stats.shooting"
           aria-valuemin="0"
-          aria-valuemax="100"></div>
+          aria-valuemax="100"
+          [ngClass]="{
+            'progress-bar__color--low': player.stats.shooting < 70,
+            'progress-bar__color--medium':
+              player.stats.shooting >= 70 && player.stats.shooting < 90,
+            'progress-bar__color--high': player.stats.shooting >= 90,
+          }"></div>
       </div>
       <p>
         {{ 'player.passing' | translate | titlecase }}:
@@ -50,7 +62,13 @@
           [style.width.%]="player.stats.passing"
           [attr.aria-valuenow]="player.stats.passing"
           aria-valuemin="0"
-          aria-valuemax="100"></div>
+          aria-valuemax="100"
+          [ngClass]="{
+            'progress-bar__color--low': player.stats.passing < 70,
+            'progress-bar__color--medium':
+              player.stats.passing >= 70 && player.stats.passing < 90,
+            'progress-bar__color--high': player.stats.passing >= 90,
+          }"></div>
       </div>
       <p>
         {{ 'player.dribbling' | translate | titlecase }}:
@@ -63,7 +81,13 @@
           [style.width.%]="player.stats.dribbling"
           [attr.aria-valuenow]="player.stats.dribbling"
           aria-valuemin="0"
-          aria-valuemax="100"></div>
+          aria-valuemax="100"
+          [ngClass]="{
+            'progress-bar__color--low': player.stats.dribbling < 70,
+            'progress-bar__color--medium':
+              player.stats.dribbling >= 70 && player.stats.dribbling < 90,
+            'progress-bar__color--high': player.stats.dribbling >= 90,
+          }"></div>
       </div>
       <p>
         {{ 'player.defending' | translate | titlecase }}:
@@ -76,7 +100,13 @@
           [style.width.%]="player.stats.defending"
           [attr.aria-valuenow]="player.stats.defending"
           aria-valuemin="0"
-          aria-valuemax="100"></div>
+          aria-valuemax="100"
+          [ngClass]="{
+            'progress-bar__color--low': player.stats.defending < 70,
+            'progress-bar__color--medium':
+              player.stats.defending >= 70 && player.stats.defending < 90,
+            'progress-bar__color--high': player.stats.defending >= 90,
+          }"></div>
       </div>
       <p>
         {{ 'player.physical' | translate | titlecase }}:
@@ -89,7 +119,13 @@
           [style.width.%]="player.stats.physical"
           [attr.aria-valuenow]="player.stats.physical"
           aria-valuemin="0"
-          aria-valuemax="100"></div>
+          aria-valuemax="100"
+          [ngClass]="{
+            'progress-bar__color--low': player.stats.physical < 70,
+            'progress-bar__color--medium':
+              player.stats.physical >= 70 && player.stats.physical < 90,
+            'progress-bar__color--high': player.stats.physical >= 90,
+          }"></div>
       </div>
     </div>
   </div>
