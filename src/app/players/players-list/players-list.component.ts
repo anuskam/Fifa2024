@@ -21,6 +21,7 @@ export class PlayersListComponent implements OnInit {
   private loadPlayers(): void {
     this.playersService.getPlayers().subscribe((players: IPlayer[]) => {
       this.players = players;
+      console.log(`players`, players);
     });
   }
 }
