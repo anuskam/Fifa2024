@@ -1,0 +1,30 @@
+.header {
+  background-color: #DEC5E3;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo img {
+    width: 8rem;
+  }
+
+  &__multilanguage {
+    display: flex;
+  }
+
+  &__multilanguage-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    &:focus {
+      border-bottom: 2px solid black;
+    }
+  }
+
+  &__multilanguage-image {
+    width: 35px;
+    height: 35px;
+  }
+}

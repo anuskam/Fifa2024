@@ -1,10 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, isDevMode } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
-  title = 'fifa-2024';
+export class AppComponent implements OnInit {
+  ngOnInit(): void {
+    if (isDevMode()) {
+      console.log('Development');
+    } else {
+      console.log('Production');
+    }
+  }
 }

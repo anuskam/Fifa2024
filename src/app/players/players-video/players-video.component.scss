@@ -1,0 +1,37 @@
+@import '../../../styles/_variables'; 
+@import '../../../styles/_mixins';    
+
+.video-container {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.video-item {
+  width: 100%;
+  margin-bottom: 1rem;
+
+  iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    height: 380px;
+  }
+}
+
+@media (min-width: $breakpoint-medium) {
+  .video-item {
+    width: 48%; 
+  }
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  button {
+    @include button-style; 
+  }
+}

@@ -1,21 +1,25 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { HttpClientModule } from '@angular/common/http';
-import { importProvidersFrom } from '@angular/core';
 // i18n
+import { HttpClientModule } from '@angular/common/http';
 import { TranslateModule } from '@ngx-translate/core';
 import { provideTranslation } from './core/config/i18n/translate-loader.config';
-/* import { MultiLanguageComponent } from './components/multi-language/multi-language.component'; */
+
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, TranslateModule, HttpClientModule],
-  providers: [
-    importProvidersFrom(TranslateModule.forRoot(provideTranslation())),
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    TranslateModule,
+    HttpClientModule,
+    CoreModule,
+    TranslateModule.forRoot(provideTranslation()),
   ],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

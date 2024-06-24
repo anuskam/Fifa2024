@@ -1,0 +1,11 @@
+$breakpoint-medium: 768px;
+$breakpoint-large: 1024px;
+
+$primary-color: #DEC5E3;
+$secondary-color: #424B54;
+// Tipografía
+@font-face {
+	font-family: 'OpenSans';
+	src: url('../assets/OpenSans.ttf');
+}
+$font-family: 'OpenSans';
