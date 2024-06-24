@@ -2,6 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PlayersService } from '../../services/players.service';
 import { IPlayer } from '../../interfaces/IPlayer.interface';
+import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-players-card',
@@ -11,6 +12,7 @@ import { IPlayer } from '../../interfaces/IPlayer.interface';
 export class PlayersCardComponent implements OnInit {
   player: IPlayer | undefined;
   errorMessage: string | undefined;
+  items: MenuItem[] = [];
   private route = inject(ActivatedRoute);
   private playersService = inject(PlayersService);
 
@@ -27,9 +29,24 @@ export class PlayersCardComponent implements OnInit {
 
   getPlayerDetails(id: number): void {
     this.playersService.getPlayerById(id).subscribe({
-      next: (player: IPlayer | undefined) => (this.player = player),
+      next: (player: IPlayer | undefined) => {
+        this.player = player;
+        this.setBreadcrumb(player);
+      },
       error: (error: unknown) => this.handleError(error),
     });
+  }
+
+  setBreadcrumb(player: IPlayer | undefined): void {
+    if (player) {
+      this.items = [
+        { label: '', icon: 'pi pi-home', routerLink: ['/players'] },
+        {
+          label: `Player ${player.name}`,
+          routerLink: [`/players/${player.id}`],
+        },
+      ];
+    }
   }
 
   private handleError(error: unknown): void {

@@ -1,25 +1,104 @@
+<p-breadcrumb [model]="items"></p-breadcrumb>
 <ng-container *ngIf="errorMessage; else playerDetails">
   <div>{{ errorMessage }}</div>
 </ng-container>
 
 <ng-template #playerDetails>
-  <div *ngIf="player">
-    <h1>{{ player.name }} {{ player.lastname }}</h1>
-    <img
-      [src]="player.photo_card"
-      alt="{{ player.name }} {{ player.lastname }} {{
-        'card_image' | translate
-      }}" />
-    <p>Team: {{ player.team }}</p>
-    <p>Nationality: {{ player.nationality }}</p>
-    <p>League: {{ player.league }}</p>
-    <p>Pace: {{ player.stats.pace }}</p>
-    <p>Shooting: {{ player.stats.shooting }}</p>
-    <p>Passing: {{ player.stats.passing }}</p>
-    <p>Dribbling: {{ player.stats.dribbling }}</p>
-    <p>Defending: {{ player.stats.defending }}</p>
-    <p>Physical: {{ player.stats.physical }}</p>
-    <button [routerLink]="['videos']">Videos</button>
+  <div *ngIf="player" class="container">
+    <div class="card">
+      <img
+        [src]="player.photo_card"
+        alt="{{ player.name }} {{ player.lastname }} {{
+          'player.card_image' | translate
+        }}"
+        class="card-image" />
+    </div>
+    <div class="info">
+      <p>
+        {{ 'player.pace' | translate | titlecase }}: {{ player.stats.pace }}
+      </p>
+      <div class="progress">
+        <div
+          class="progress-bar"
+          role="progressbar"
+          [style.width.%]="player.stats.pace"
+          [attr.aria-valuenow]="player.stats.pace"
+          aria-valuemin="0"
+          aria-valuemax="100"></div>
+      </div>
+      <p>
+        {{ 'player.shooting' | translate | titlecase }}:
+        {{ player.stats.shooting }}
+      </p>
+      <div class="progress">
+        <div
+          class="progress-bar"
+          role="progressbar"
+          [style.width.%]="player.stats.shooting"
+          [attr.aria-valuenow]="player.stats.shooting"
+          aria-valuemin="0"
+          aria-valuemax="100"></div>
+      </div>
+      <p>
+        {{ 'player.passing' | translate | titlecase }}:
+        {{ player.stats.passing }}
+      </p>
+      <div class="progress">
+        <div
+          class="progress-bar"
+          role="progressbar"
+          [style.width.%]="player.stats.passing"
+          [attr.aria-valuenow]="player.stats.passing"
+          aria-valuemin="0"
+          aria-valuemax="100"></div>
+      </div>
+      <p>
+        {{ 'player.dribbling' | translate | titlecase }}:
+        {{ player.stats.dribbling }}
+      </p>
+      <div class="progress">
+        <div
+          class="progress-bar"
+          role="progressbar"
+          [style.width.%]="player.stats.dribbling"
+          [attr.aria-valuenow]="player.stats.dribbling"
+          aria-valuemin="0"
+          aria-valuemax="100"></div>
+      </div>
+      <p>
+        {{ 'player.defending' | translate | titlecase }}:
+        {{ player.stats.defending }}
+      </p>
+      <div class="progress">
+        <div
+          class="progress-bar"
+          role="progressbar"
+          [style.width.%]="player.stats.defending"
+          [attr.aria-valuenow]="player.stats.defending"
+          aria-valuemin="0"
+          aria-valuemax="100"></div>
+      </div>
+      <p>
+        {{ 'player.physical' | translate | titlecase }}:
+        {{ player.stats.physical }}
+      </p>
+      <div class="progress">
+        <div
+          class="progress-bar"
+          role="progressbar"
+          [style.width.%]="player.stats.physical"
+          [attr.aria-valuenow]="player.stats.physical"
+          aria-valuemin="0"
+          aria-valuemax="100"></div>
+      </div>
+    </div>
+  </div>
+  <div class="button-container">
+    <button [routerLink]="['/players']">
+      {{ 'button.return' | translate | titlecase }}
+    </button>
+    <button [routerLink]="['videos']">
+      {{ 'button.videos' | translate | titlecase }}
+    </button>
   </div>
 </ng-template>
-<button [routerLink]="['/players']">Volver</button>

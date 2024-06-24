@@ -2,6 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PlayersService } from '../../services/players.service';
 import { IPlayer } from '../../interfaces/IPlayer.interface';
+import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-players-video',
@@ -11,6 +12,7 @@ import { IPlayer } from '../../interfaces/IPlayer.interface';
 export class PlayersVideoComponent implements OnInit {
   player: IPlayer | undefined;
   videos: string[] = [];
+  items: MenuItem[] = [];
   errorMessage: string | undefined;
   private route = inject(ActivatedRoute);
   private playersService = inject(PlayersService);
@@ -26,11 +28,25 @@ export class PlayersVideoComponent implements OnInit {
         next: (player: IPlayer | undefined) => {
           this.player = player;
           this.videos = player ? player.videos : [];
+          this.setBreadcrumb(playerId, player);
         },
         error: (error: unknown) => this.handleError(error),
       });
     } else {
       this.handleError(new Error('Invalid player ID'));
+    }
+  }
+
+  private setBreadcrumb(playerId: number, player: IPlayer | undefined): void {
+    if (player) {
+      this.items = [
+        { label: '', icon: 'pi pi-home', routerLink: ['/players'] },
+        {
+          label: `Player ${player.name}`,
+          routerLink: [`/players/${playerId}`],
+        },
+        { label: 'Videos', routerLink: [`/players/${playerId}/videos`] },
+      ];
     }
   }
 

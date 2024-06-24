@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 
 // i18n
 import { HttpClientModule } from '@angular/common/http';
-import { importProvidersFrom } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { provideTranslation } from './core/config/i18n/translate-loader.config';
 
@@ -18,10 +17,9 @@ import { provideTranslation } from './core/config/i18n/translate-loader.config';
     TranslateModule,
     HttpClientModule,
     CoreModule,
+    TranslateModule.forRoot(provideTranslation()),
   ],
-  providers: [
-    importProvidersFrom(TranslateModule.forRoot(provideTranslation())),
-  ],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

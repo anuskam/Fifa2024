@@ -1,0 +1,22 @@
+@import '../../../styles/_mixins';
+
+.footer {
+  text-align: center;
+  padding: 20px;
+
+  &__person {
+    line-height: 1.5rem;
+    span {
+      &:not(:last-child)::after {
+        content: " | ";
+      }
+    }
+  }
+
+  &__vueling {
+    display: none;
+    @media (min-width: $breakpoint-medium) {
+      display: inline-block;
+    }
+  }
+}
