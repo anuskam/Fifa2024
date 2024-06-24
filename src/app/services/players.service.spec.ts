@@ -47,7 +47,7 @@ class MockPlayersService extends PlayersService {
     return of(player ? player.videos : []);
   }
 
-  handleError(error: HttpErrorResponse) {
+  handleError() {
     return throwError('An error occurred');
   }
 }
