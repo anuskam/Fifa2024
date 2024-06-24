@@ -4,6 +4,7 @@ import { PlayersService } from '../../services/players.service';
 import { IPlayer } from '../../interfaces/IPlayer.interface';
 import { MenuItem } from 'primeng/api';
 import { environment } from '../../../environments/environment';
+import { EncryptionService } from '../../services/encryption.service';
 
 @Component({
   selector: 'app-players-card',
@@ -16,12 +17,13 @@ export class PlayersCardComponent implements OnInit {
   items: MenuItem[] = [];
   loadingState: boolean = true;
   errorState: boolean = false;
-  imgNotFoundPath: string;
+  decryptedImgNotFound: string;
   private route = inject(ActivatedRoute);
   private playersService = inject(PlayersService);
-
+  private encryptionService = inject(EncryptionService);
+  
   constructor() {
-    this.imgNotFoundPath = environment.imgNotFound;
+    this.decryptedImgNotFound = this.encryptionService.decrypt(environment.imgNotFound);
   }
   ngOnInit(): void {
     this.loadPlayerDetails();

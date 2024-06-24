@@ -5,14 +5,20 @@ import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { IPlayer } from '../interfaces/IPlayer.interface';
 import { PlayersService } from './players.service';
+import { EncryptionService } from './encryption.service';
 
 @Injectable()
 export class PlayersPublicService implements PlayersService {
-  private playersUrl = environment.apiUrl;
+  decryptedApiUrl: string;
   private http = inject(HttpClient);
+  private encryptionService = inject(EncryptionService);
+  
+  constructor() {
+    this.decryptedApiUrl = this.encryptionService.decrypt(environment.apiUrl);
+  }
 
   getPlayers(): Observable<IPlayer[]> {
-    return this.http.get<{ players: IPlayer[] }>(this.playersUrl).pipe(
+    return this.http.get<{ players: IPlayer[] }>(this.decryptedApiUrl).pipe(
       map(response => response.players),
       catchError(this.handleError),
     );

@@ -3,6 +3,7 @@ import { PlayersService } from '../../services/players.service';
 import { IPlayer } from '../../interfaces/IPlayer.interface';
 import { MenuItem } from 'primeng/api';
 import { environment } from '../../../environments/environment';
+import { EncryptionService } from '../../services/encryption.service';
 
 @Component({
   selector: 'app-players-list',
@@ -12,13 +13,14 @@ import { environment } from '../../../environments/environment';
 export class PlayersListComponent implements OnInit {
   players: IPlayer[] = [];
   items: MenuItem[] = [];
-  imgNotFoundPath: string;
+  decryptedImgNotFound: string;
   loadingStates: { [key: string]: boolean } = {};
   errorStates: { [key: string]: boolean } = {};
   private playersService = inject(PlayersService);
-
+  private encryptionService = inject(EncryptionService);
+  
   constructor() {
-    this.imgNotFoundPath = environment.imgNotFound;
+    this.decryptedImgNotFound = this.encryptionService.decrypt(environment.imgNotFound);
   }
 
   ngOnInit(): void {
