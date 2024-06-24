@@ -21,9 +21,11 @@ export class PlayersCardComponent implements OnInit {
   private route = inject(ActivatedRoute);
   private playersService = inject(PlayersService);
   private encryptionService = inject(EncryptionService);
-  
+
   constructor() {
-    this.decryptedImgNotFound = this.encryptionService.decrypt(environment.imgNotFound);
+    this.decryptedImgNotFound = this.encryptionService.decrypt(
+      environment.imgNotFound,
+    );
   }
   ngOnInit(): void {
     this.loadPlayerDetails();

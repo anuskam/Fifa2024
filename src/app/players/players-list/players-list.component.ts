@@ -18,9 +18,11 @@ export class PlayersListComponent implements OnInit {
   errorStates: { [key: string]: boolean } = {};
   private playersService = inject(PlayersService);
   private encryptionService = inject(EncryptionService);
-  
+
   constructor() {
-    this.decryptedImgNotFound = this.encryptionService.decrypt(environment.imgNotFound);
+    this.decryptedImgNotFound = this.encryptionService.decrypt(
+      environment.imgNotFound,
+    );
   }
 
   ngOnInit(): void {
