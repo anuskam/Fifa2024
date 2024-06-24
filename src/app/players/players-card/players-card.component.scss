@@ -80,3 +80,16 @@
     @include button-style();
   }
 }
+.card-image,
+.spinner img {
+  width: 20%;
+  height: 20%;
+  object-fit: cover; // Asegura que la imagen cubra el área disponible
+}
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}

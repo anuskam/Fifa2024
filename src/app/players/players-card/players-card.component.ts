@@ -3,19 +3,26 @@ import { ActivatedRoute } from '@angular/router';
 import { PlayersService } from '../../services/players.service';
 import { IPlayer } from '../../interfaces/IPlayer.interface';
 import { MenuItem } from 'primeng/api';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-players-card',
   templateUrl: './players-card.component.html',
-  styleUrl: './players-card.component.scss',
+  styleUrls: ['./players-card.component.scss'],
 })
 export class PlayersCardComponent implements OnInit {
   player: IPlayer | undefined;
   errorMessage: string | undefined;
   items: MenuItem[] = [];
+  loadingState: boolean = true;
+  errorState: boolean = false;
+  imgNotFoundPath: string;
   private route = inject(ActivatedRoute);
   private playersService = inject(PlayersService);
 
+  constructor() {
+    this.imgNotFoundPath = environment.imgNotFound;
+  }
   ngOnInit(): void {
     this.loadPlayerDetails();
   }
@@ -32,9 +39,28 @@ export class PlayersCardComponent implements OnInit {
       next: (player: IPlayer | undefined) => {
         this.player = player;
         this.setBreadcrumb(player);
+        this.startLoading(); // Iniciar el estado de carga
       },
       error: (error: unknown) => this.handleError(error),
     });
+  }
+
+  startLoading(): void {
+    this.loadingState = true;
+    this.errorState = false;
+    // Temporizador para cambiar el estado de carga después de 1 segundo
+    setTimeout(() => {
+      this.loadingState = false;
+    }, 1000);
+  }
+
+  onLoad(): void {
+    this.loadingState = false;
+  }
+
+  onError(): void {
+    this.loadingState = false;
+    this.errorState = true;
   }
 
   setBreadcrumb(player: IPlayer | undefined): void {

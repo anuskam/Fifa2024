@@ -6,12 +6,33 @@
 <ng-template #playerDetails>
   <div *ngIf="player" class="container">
     <div class="card">
-      <img
-        [src]="player.photo_card"
-        alt="{{ player.name }} {{ player.lastname }} {{
-          'player.card_image' | translate
-        }}"
-        class="card-image" />
+      <ng-container *ngIf="loadingState; else imageTemplate">
+        <div class="spinner">
+          <app-load-img> </app-load-img>
+        </div>
+      </ng-container>
+      <ng-template #imageTemplate>
+        <img
+          *ngIf="!errorState; else errorTemplate"
+          [src]="player.photo_card"
+          (load)="onLoad()"
+          (error)="onError()"
+          alt="{{ player.name }} {{ player.lastname }} {{
+            'player.card_image' | translate
+          }}"
+          class="card-image" />
+      </ng-template>
+      <ng-template #errorTemplate>
+        <div class="error-container">
+          <img 
+            [src]="imgNotFoundPath"
+            class="card-image"
+            alt="Image Not Found" />
+          <div class="error-placeholder">
+            <p>{{ player.name }} {{ player.lastname }}</p>
+          </div>
+        </div>
+      </ng-template>
     </div>
     <div class="info">
       <p>

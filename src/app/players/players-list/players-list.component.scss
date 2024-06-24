@@ -29,3 +29,16 @@
     width: auto;
   }
 }
+.players-list__player {
+    .error-placeholder {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px; // Ajusta según tu diseño
+      p {
+        margin: 0;
+        font-size: 14px;
+        color: #333;
+      }
+    }
+}
