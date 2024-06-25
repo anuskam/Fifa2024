@@ -9,7 +9,12 @@
     <span class="footer__vueling">Vueling University</span>
     <span>pdefelitto&#64;gmail.com</span>
   </div>
-  <div class="test">
-    <p>Soy develop? {{ env.production }}</p>
+  <div class="footer__environment" *ngIf="env.production; else nonProduction">
+    <img alt="production icon" src="../../../assets/images/pro.png" />
   </div>
+  <ng-template #nonProduction>
+    <div class="footer__environment">
+      <img alt="development icon" src="../../../assets/images/dev.png" />
+    </div>
+  </ng-template>
 </div>
