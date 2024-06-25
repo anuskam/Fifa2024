@@ -8,10 +8,9 @@ describe('LoadImgComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [LoadImgComponent]
-    })
-    .compileComponents();
-    
+      declarations: [LoadImgComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(LoadImgComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

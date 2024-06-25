@@ -9,7 +9,7 @@ import { EncryptionService } from './encryption.service';
 
 @Injectable()
 export class PlayersPublicService implements PlayersService {
-  decryptedApiUrl: string;
+  private decryptedApiUrl: string;
   private http = inject(HttpClient);
   private encryptionService = inject(EncryptionService);
 
