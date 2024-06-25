@@ -6,12 +6,13 @@ import { map, catchError } from 'rxjs/operators';
 import { IPlayer } from '../interfaces/IPlayer.interface';
 import { PlayersService } from './players.service';
 import { EncryptionService } from './encryption.service';
-
+import { TranslateService } from '@ngx-translate/core';
 @Injectable()
 export class PlayersPublicService implements PlayersService {
-  decryptedApiUrl: string;
+  private decryptedApiUrl: string;
   private http = inject(HttpClient);
   private encryptionService = inject(EncryptionService);
+  private translate = inject(TranslateService);
 
   constructor() {
     this.decryptedApiUrl = this.encryptionService.decrypt(environment.apiUrl);
@@ -39,7 +40,12 @@ export class PlayersPublicService implements PlayersService {
   }
 
   handleError(error: HttpErrorResponse): Observable<never> {
-    console.error('An error occurred:', error.message);
+    this.translate
+      .get('error.error_occurred')
+      .subscribe((translatedMessage: string) => {
+        console.error(translatedMessage, error.message);
+      });
+    /* console.error('An error occurred:', error.message); */
     return throwError(
       () => new Error('Something bad happened; please try again later.'),
     );

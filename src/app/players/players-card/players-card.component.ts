@@ -5,6 +5,7 @@ import { IPlayer } from '../../interfaces/IPlayer.interface';
 import { MenuItem } from 'primeng/api';
 import { environment } from '../../../environments/environment';
 import { EncryptionService } from '../../services/encryption.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-players-card',
@@ -22,6 +23,7 @@ export class PlayersCardComponent implements OnInit {
   private route = inject(ActivatedRoute);
   private playersService = inject(PlayersService);
   private encryptionService = inject(EncryptionService);
+  private translate = inject(TranslateService);
 
   constructor() {
     this.decryptedImgNotFound = this.encryptionService.decrypt(
@@ -81,8 +83,18 @@ export class PlayersCardComponent implements OnInit {
   }
 
   private handleError(error: unknown): void {
-    console.error('An error occurred:', error);
-    this.errorMessage =
-      'Failed to load player details. Please try again later.';
+    this.translate
+      .get('error.error_occurred')
+      .subscribe((translatedMessage: string) => {
+        console.error(translatedMessage, error);
+      });
+    /* console.error('An error occurred:', error); */
+    this.translate
+      .get('error.failed_player')
+      .subscribe((translatedMessage: string) => {
+        this.errorMessage = translatedMessage;
+      });
+    /* this.errorMessage =
+      'Failed to load player details. Please try again later.'; */
   }
 }

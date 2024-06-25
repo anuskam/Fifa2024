@@ -14,5 +14,9 @@
   "button": {
     "return": "return",
     "videos": "videos"
+  },
+  "error": {
+    "error_occurred": "An error occurred:",
+    "failed_player": "Failed to load player details. Please try again later."
   }
 }

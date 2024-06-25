@@ -14,5 +14,9 @@
   "button": {
     "return": "volver",
     "videos": "videos"
+  },
+  "error": {
+    "error_occurred": "Ha habido un errror:",
+    "failed_player": "Error al cargar los detalles del jugador. Por favor, inténtalo de nuevo más tarde."
   }
 }

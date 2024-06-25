@@ -21,7 +21,7 @@ import { LoadImgComponent } from '../utils/components/load-img/load-img.componen
     PlayersCardComponent,
     PlayersVideoComponent,
     SafeUrlPipe,
-    LoadImgComponent
+    LoadImgComponent,
   ],
   imports: [
     CommonModule,
