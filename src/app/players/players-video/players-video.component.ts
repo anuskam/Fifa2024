@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { PlayersService } from '../../services/players.service';
 import { IPlayer } from '../../interfaces/IPlayer.interface';
 import { MenuItem } from 'primeng/api';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-players-video',
@@ -16,6 +17,7 @@ export class PlayersVideoComponent implements OnInit {
   errorMessage: string | undefined;
   private route = inject(ActivatedRoute);
   private playersService = inject(PlayersService);
+  private translate = inject(TranslateService);
 
   ngOnInit(): void {
     this.loadPlayerVideos();
@@ -51,7 +53,12 @@ export class PlayersVideoComponent implements OnInit {
   }
 
   private handleError(error: unknown): void {
-    console.error('An error occurred:', error);
+    this.translate
+      .get('error.error_occurred')
+      .subscribe((translatedMessage: string) => {
+        console.error(translatedMessage, error);
+      });
+    /* console.error('An error occurred:', error); */
     this.errorMessage = 'Failed to load player videos. Please try again later.';
   }
 }

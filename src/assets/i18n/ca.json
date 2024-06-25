@@ -14,5 +14,9 @@
   "button": {
     "return": "tornar",
     "videos": "vídeos"
+  },
+  "error": {
+    "error_occurred": "Hi ha hagut un error:",
+    "failed_player": "Error al carregar els detalls del jugador. Per favor, intenta-ho més tard."
   }
 }
