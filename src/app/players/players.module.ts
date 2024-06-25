@@ -13,6 +13,7 @@ import { SafeUrlPipe } from '../utils/pipes/safe-url.pipe';
 import { PlayersService } from '../services/players.service';
 import { PlayersPublicService } from '../services/players-public.service';
 import { BreadcrumbModule } from 'primeng/breadcrumb';
+import { LoadImgComponent } from '../utils/components/load-img/load-img.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { BreadcrumbModule } from 'primeng/breadcrumb';
     PlayersCardComponent,
     PlayersVideoComponent,
     SafeUrlPipe,
+    LoadImgComponent
   ],
   imports: [
     CommonModule,
