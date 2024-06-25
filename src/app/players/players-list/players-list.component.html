@@ -4,10 +4,29 @@
     <div *ngFor="let player of players" class="players-list__list">
       <div class="players-list__player">
         <a [routerLink]="[player.id]">
-          <img
-            [src]="player.photo"
-            class="players-list__image"
-            alt="Player Photo" />
+          <ng-container *ngIf="loadingStates[player.photo]; else imageTemplate">
+            <app-load-img></app-load-img>
+          </ng-container>
+          <ng-template #imageTemplate>
+            <img
+              *ngIf="!errorStates[player.photo]; else errorTemplate"
+              [src]="player.photo"
+              (load)="onLoad(player.photo)"
+              (error)="onError(player.photo)"
+              class="players-list__image"
+              alt="Player photo" />
+          </ng-template>
+          <ng-template #errorTemplate>
+            <div>
+              <div class="error-placeholder">
+                <p>{{ player.name }} {{ player.lastname }}</p>
+              </div>
+              <img
+                [src]="decryptedImgNotFound"
+                class="players-list__image"
+                alt="Image Not Found" />
+            </div>
+          </ng-template>
         </a>
       </div>
     </div>
